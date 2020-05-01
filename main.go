@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
 
@@ -20,10 +23,10 @@ func main() {
 }
 
 func search(chara string) (hasil string, status bool) {
-	karakter := [...]string{"Emilia", "Saki"}
+	karakter := [...]string{"Emilia", "Saki", "Chitoge"}
 
 	for _, karak := range karakter {
-		if chara == karak {
+		if chara == karak || chara == strings.ToLower(karak) {
 			hasil = chara
 			status = true
 			return
